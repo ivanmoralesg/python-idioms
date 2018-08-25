@@ -11,20 +11,35 @@ seq = [fib(x) for x in range(10) if x % 2 == 0]
 # Dictionary comprehension
 powers = {x: x**2 for x in (2, 4, 6)}
 
-# Keyword arguments, variable args, packing args
-def upsert(name, title='Software Engineer', *args, **config):
-    print config
+# Default arguments, variable args, dictionary packed args
+def upsert(name, title='Software Engineer', languages='Python', *args, **config):
+    """Update object if it exist, or create a new one.
 
-config = {'name': "My List", 'description': "Description"}
+    Lookup object by name and update it with new values, else create new by name
+    """
+    function_args = locals()
+    print function_args
 
-# Dictionary keys
-dict(name='My List', title='Sofwares')
+# Keyword arguments
+upsert('Joe', title='Developer')
+upsert('Jim', 'Tester', 'Java', 'Big Corp')
 
 # Argument unpacking
+config = {'name': "My List", 'description': "Description"}
 upsert(**config)
+
+# Lambda
+print (lambda x: x + 1)(5)
+
+# String dictionary keys
+dict(name='My List', title='Softwares')
 
 # Set data structure
 set([1, 2])
+
+# Tuple packing and unpacking
+metals = 'gold', 'silver'
+g, s = metals
 
 # Iterate sequence with index
 for i, n in enumerate(['heart', 'spade', 'club', 'diamond']):
@@ -33,3 +48,8 @@ for i, n in enumerate(['heart', 'spade', 'club', 'diamond']):
 # Iterate dictionary
 for k, v in powers.iteritems():
     print k, v
+
+# Use module as script
+if __name__ == "__main__":
+    import sys
+    print sys.argv
