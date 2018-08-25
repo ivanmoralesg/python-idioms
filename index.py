@@ -6,6 +6,10 @@ def fib(n):
 
 # List comprehension
 seq = [fib(x) for x in range(10)]
+seq = [fib(x) for x in range(10) if x % 2 == 0]
+
+# Dictionary comprehension
+powers = {x: x**2 for x in (2, 4, 6)}
 
 # Keyword arguments, variable args, packing args
 def upsert(name, title='Software Engineer', *args, **config):
@@ -21,3 +25,11 @@ upsert(**config)
 
 # Set data structure
 set([1, 2])
+
+# Iterate sequence with index
+for i, n in enumerate(['heart', 'spade', 'club', 'diamond']):
+    print i, n
+
+# Iterate dictionary
+for k, v in powers.iteritems():
+    print k, v
