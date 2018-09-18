@@ -1,5 +1,7 @@
 # Pythom idioms
 
+import sys
+
 # Recursive function
 def fib(n):
     return 1 if n < 2 else fib(n-2) + fib(n-1)
@@ -49,7 +51,28 @@ for i, n in enumerate(['heart', 'spade', 'club', 'diamond']):
 for k, v in powers.iteritems():
     print k, v
 
-# Use module as script
+# Built in functions and variables
+import __builtin__
+for fv in dir(__builtin__):
+    print fv
+
+# Open, read and close file
+with open('index.py') as f:
+    line = f.read()
+
+# JSON serialization and deserialization
+import json
+with open('data.json', 'w') as f:
+    json.dump([
+        dict(name='John', title='Manager'),
+        dict(name='Joe', title='Accountant'),
+        ], f)
+
+with open('data.json') as f:
+    data = json.load(f)
+    print data
+
+# Run module as script
 if __name__ == "__main__":
     import sys
     print sys.argv
