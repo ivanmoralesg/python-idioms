@@ -20,7 +20,7 @@ def upsert(name, title='Software Engineer', languages='Python', *args, **config)
     Lookup object by name and update it with new values, else create new by name
     """
     function_args = locals()
-    print function_args
+    print (function_args)
 
 # Keyword arguments
 upsert('Joe', title='Developer')
@@ -31,7 +31,7 @@ config = {'name': "My List", 'description': "Description"}
 upsert(**config)
 
 # Lambda
-print (lambda x: x + 1)(5)
+print ( (lambda x: x + 1)(5) )
 
 # String dictionary keys
 dict(name='My List', title='Softwares')
@@ -45,16 +45,16 @@ g, s = metals
 
 # Iterate sequence with index
 for i, n in enumerate(['heart', 'spade', 'club', 'diamond']):
-    print i, n
+    print (i, n)
 
 # Iterate dictionary
-for k, v in powers.iteritems():
-    print k, v
+for k, v in powers.items():
+    print (k, v)
 
 # Built in functions and variables
-import __builtin__
-for fv in dir(__builtin__):
-    print fv
+import builtins
+for fv in dir(builtins):
+    print (fv)
 
 # Open, read and close file
 with open('index.py') as f:
@@ -70,9 +70,9 @@ with open('data.json', 'w') as f:
 
 with open('data.json') as f:
     data = json.load(f)
-    print data
+    print (data)
 
 # Run module as script
 if __name__ == "__main__":
     import sys
-    print sys.argv
+    print (sys.argv)
